@@ -17,9 +17,7 @@ Debes crear una aplicación que consta de **3 componentes principales**:
 - Descripción del detalle del producto
 
 La aplicación debe constar de servidor y cliente. El servidor debe exponer un API RESTful y el cliente consumirlo.
-
 ## Contexto
-
 Somos un bazar con todo tipo de productos. Queremos crear nuestra app web. Por ahora **nuestro mercado va a ser el móvil**.
 
 Esta primera versión los usuarios podrán buscar el nombre del producto, le mostraremos una lista de productos y podrán hacer clic en cada uno para ver el detalle. 
