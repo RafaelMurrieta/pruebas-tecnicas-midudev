@@ -28,32 +28,33 @@ function App() {
 
   return (
     <>
-      <div className='text-center'>
-        <h2>Libros</h2>
+      <div>
+        <h2 className='text-center'>Libros</h2>
         <div className="flex flex-wrap">
-        {
-          INIT_BOOK.map(book =>{
-            return(
-              <div key={book.ISBN} className="card rounded flex w-2/6 bg-slate-300 m-10 col text-black  justify-items-center">
-                <div className='image-card w-full justify-items-center'>
-                <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                    <image href={book.cover} width="100" height="100" />
-                </svg>
-                </div>
-                <div className='card-body '>
-                <p><strong>{book.title}</strong></p>
-                  <p>Autor: {book.author.name}</p>
-                  <p>Genero: {book.genre}</p>
-                  <p>{book.synopsis}</p>
-                  {/* <p>{book.year}</p> */}
-                  {/* <p>{book.pages}</p> */}
-                  {/* <p>{book.ISBN}</p> */}
-                </div>
-              </div>
-            )
-          })
-        }
+  {
+    INIT_BOOK.map(book => {
+      return (
+        <div key={book.ISBN} className=" bg-slate-300 m-3 p-8 grid text-black w-1/4 rounded-3xl">
+          <div className='image-card w-full justify-items-center'>
+            <svg width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
+              <image href={book.cover} width="200" height="200" />
+            </svg>
+          </div>
+          <div className='card-body w-full text-wrap'>
+            <p><strong>{book.title}</strong></p>
+            <p>Autor: {book.author.name}</p>
+            <p>Genero: {book.genre}</p>
+            <p>{book.synopsis}</p>
+            {/* <p>{book.year}</p> */}
+            {/* <p>{book.pages}</p> */}
+            {/* <p>{book.ISBN}</p> */}
+          </div>
         </div>
+      )
+    })
+  }
+</div>
+
       </div>
     </>
   )
