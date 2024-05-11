@@ -29,6 +29,12 @@ h2{
   line-height: 1.1;
 }
 
+#root {
+  width: 70%;
+  display: flex;
+  margin: 0 auto;
+  margin-left: 3rem;
+}
 
 #search{
   width: 30%;
@@ -39,4 +45,12 @@ button{
   background-color: #121212;
   border-radius: 10px;
   padding: 10px 0px;
+}
+
+.container-books{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  width:30%;
 }

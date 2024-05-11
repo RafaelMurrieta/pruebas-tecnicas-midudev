@@ -1,6 +1,5 @@
-// import { useState } from 'react'
 import books from '../public/books.json';
-import './App.css'
+import { Card } from './card';
 
 var INIT_BOOK: Book[] = [];
 const library = books.library
@@ -23,41 +22,26 @@ interface Book {
   }
 }
 
+
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <h2 className='text-center'>Libros</h2>
-        <div className="flex flex-wrap">
-  {
-    INIT_BOOK.map(book => {
-      return (
-        <div key={book.ISBN} className=" bg-slate-300 m-3 p-8 grid text-black w-1/4 rounded-3xl">
-          <div className='image-card w-full justify-items-center'>
-            <svg width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
-              <image href={book.cover} width="200" height="200" />
-            </svg>
-          </div>
-          <div className='card-body w-full text-wrap'>
-            <p><strong>{book.title}</strong></p>
-            <p>Autor: {book.author.name}</p>
-            <p>Genero: {book.genre}</p>
-            <p>{book.synopsis}</p>
-            {/* <p>{book.year}</p> */}
-            {/* <p>{book.pages}</p> */}
-            {/* <p>{book.ISBN}</p> */}
-          </div>
-        </div>
-      )
-    })
-  }
-</div>
-
-      </div>
-    </>
-  )
+    <section className='container-books'>
+          {
+            INIT_BOOK.map(book => (
+                <Card
+                  key={book.ISBN}
+                  ID={book.ISBN}
+                  cover={book.cover}
+                  title={book.title}
+                  name={book.author.name}
+                  genere={book.genre} 
+                  synopsis={book.synopsis}
+                />
+            ))
+          }
+    </section>
+  );
 }
+
 
 export default App
